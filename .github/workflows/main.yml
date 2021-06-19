@@ -7,9 +7,11 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Download Base Files
-        run: wget "https://www.amxmodx.org/amxxdrop/1.9/amxmodx-1.9.0-git5271-base-linux.tar.gz" -O "amxmodx-base-linux.tar.gz"
-      - name: Extract Base Files
+      - name: Download AMX Mod X Base Files
+        run: |
+          wget https://www.amxmodx.org/amxxdrop/1.9/amxmodx-latest-base-linux -O amxmodx-latest-base-linux
+          wget https://www.amxmodx.org/amxxdrop/1.9/$(cat amxmodx-latest-base-linux) -O amxmodx-base-linux.tar.gz
+      - name: Extract AMX Mod X Base Files
         run: tar -zxvf amxmodx-base-linux.tar.gz
       - name: Copy repo files into AMX Mod X directory
         run: cp -r scripting addons/amxmodx/
