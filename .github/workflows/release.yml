@@ -21,7 +21,7 @@ jobs:
         run: cd addons/amxmodx/scripting/ && ./amxxpc ${{ env.PLUGIN_TO_COMPILE }}.sma -o${{ env.PLUGIN_TO_COMPILE }}.amxx
       - name: Release Plugin
         run: |
-          gh release create ${{ env.VERSION }} -n "${{ env.MESSAGE }}" -t "${{ env.NAME }}" ${{ env.FILES }}
+          gh release create ${{ env.VERSION }} -n "${{ env.MESSAGE }}" -t "${{ env.NAME }}" ${{ env.FILES }} --draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: "tag_${{ github.run_id }}"
