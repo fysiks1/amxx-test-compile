@@ -1,10 +1,10 @@
 #include <amxmodx>
-#include <mycustomapi>
+#include <dodx>
 
 public plugin_init()
 {
 	register_plugin("test github action compile", "0.2", "fysiks")
 	
-	new var = myfunction(3,5)
-	server_print("Test my custom api: %d", var)
+	new allies = dod_get_map_info(MI_ALLIES_TEAM)
+	server_print("Team: %s", allies ? "American" : "British")
 }

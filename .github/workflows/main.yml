@@ -13,6 +13,12 @@ jobs:
           wget https://www.amxmodx.org/amxxdrop/1.9/$(cat amxmodx-latest-base-linux) -O amxmodx-base-linux.tar.gz
       - name: Extract AMX Mod X Base Files
         run: tar -zxvf amxmodx-base-linux.tar.gz
+      - name: Download AMX Mod X DOD Files
+        run: |
+          wget http://www.amxmodx.org/amxxdrop/1.9/amxmodx-latest-dod-linux -O amxmodx-latest-dod-linux
+          wget https://www.amxmodx.org/amxxdrop/1.9/$(cat amxmodx-latest-dod-linux) -O amxmodx-dod-linux.tar.gz
+      - name: Extract AMX Mod X DOD Files
+        run: tar -zxvf amxmodx-dod-linux.tar.gz
       - name: Copy repo files into AMX Mod X directory
         run: cp -r scripting addons/amxmodx/
       - name: Compile with amxxpc
