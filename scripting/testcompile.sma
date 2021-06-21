@@ -7,4 +7,5 @@ public plugin_init()
 	
 	new var = myfunction(3,5)
 	server_print("Test my custom api: %d", var)
+	server_print("test plugin change")
 }
