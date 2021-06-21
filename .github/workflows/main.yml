@@ -33,10 +33,10 @@ jobs:
 
       - name: Release Plugin
         run: |
-          gh release create ${{ env.VERSION }} -n "${{ env.MESSAGE }}" -t "${{ env.NAME }}" ${{ env.FILES }} --draft
+          gh release create ${{ env.TAG }} -n "${{ env.MESSAGE }}" -t "${{ env.NAME }}" ${{ env.FILES }} --draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: "${{ steps.vars.outputs.short_ref }}_temp"
+          TAG: "${{ steps.vars.outputs.short_ref }}_temp"
           MESSAGE: "latest build for this branch"
           NAME: "Latest for branch:  ${{ steps.vars.outputs.short_ref }}"
           FILES: addons/amxmodx/scripting/${{ env.PLUGIN_TO_COMPILE }}.amxx
