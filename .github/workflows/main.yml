@@ -9,10 +9,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Download AMX Mod X Base Files
         run: |
-          wget https://www.amxmodx.org/amxxdrop/1.9/amxmodx-latest-base-linux -O amxmodx-latest-base-linux
-          wget https://www.amxmodx.org/amxxdrop/1.9/$(cat amxmodx-latest-base-linux) -O amxmodx-base-linux.tar.gz
-      - name: Extract AMX Mod X Base Files
-        run: tar -zxvf amxmodx-base-linux.tar.gz
+          wget "https://www.amxmodx.org/latest.php?version=1.9&os=linux&package=base" -O amxmodx-base-linux.tar.gz
+          tar -zxvf amxmodx-base-linux.tar.gz
       - name: Copy repo files into AMX Mod X directory
         run: cp -r scripting addons/amxmodx/
       - name: Compile with amxxpc
