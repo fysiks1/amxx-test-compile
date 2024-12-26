@@ -66,5 +66,5 @@ jobs:
             Changes in this Release
             - First Change
             - Second Change
-          files: dodplugin.amxx
+          files: ${{ github.workspace }}/dodplugin.amxx
 
