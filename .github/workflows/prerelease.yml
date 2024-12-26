@@ -53,6 +53,7 @@ jobs:
           name: plugin_binaries
           path: ${{ env.ARTIFACTS_DIR }}/*
   release:
+    needs: compile_plugin
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact
