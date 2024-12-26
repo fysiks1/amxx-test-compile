@@ -68,5 +68,5 @@ jobs:
             Changes in this Release
             - First Change
             - Second Change
-          files: ${{ github.workspace }}/*.amxx
+          files: ./plugin_binaries/*.amxx
 
